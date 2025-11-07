@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stop watch</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>stopwatch</h1>
+        <p><span id="seconds">00</span><span id="milliseconds">00</span></p>
+        <button id="button-start">start</button>
+        <button id="button-stop">stop</button>
+        <button id="button-reset">reset</button>
+
+    </div>
+
+    <script>
+        window.onload = function () {
+            var seconds = 0;
+            var milliseconds = 0;
+            var appendmilliseconds = document.GetElementById("milliseconds");
+            var appendSeconds = document.GetElementById("seconds");
+            var buttonStart = document.GetElementById('button-start');
+            var buttonStop = document.getElementById('button-stop');
+            var buttonReset = document.GetElementById('button-reset');
+            var interval;
+
+            buttonStart.onClick = function () {
+                clearInterval(Interval);
+                Interval = setInterval(startTimer, 10);
+            }
+
+            buttonStop.onClick = function () {
+                clearInterval(Interval);
+            }
+
+            buttonReset.onclick = function () {
+                clearInterval(Interval);
+                milliseconds = "00";
+                seconds = "00";
+                appendmilliseconds.innerHTML = milliseconds;
+                appendSeconds.innerHTML = seconds;
+            }
+        }
+    </script>
+
+</body>
+
+</html>
